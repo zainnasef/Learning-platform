@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منصة التعلم العربية - تعلم البرمجة بالعربية</title>
+    <title>الكورسات - منصة التعلم العربية</title>
     <!-- Remix Icon -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <!-- Google Fonts -->
@@ -174,36 +174,32 @@
         }
         
         /* Hero Section */
-        .hero {
-            padding: 150px 0 100px;
+        .page-hero {
+            padding: 150px 0 80px;
             background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
             color: white;
             position: relative;
             overflow: hidden;
+            text-align: center;
         }
         
-        .hero-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-        }
-        
-        .hero-text {
-            flex: 1;
-        }
-        
-        .hero-text h2 {
+        .page-hero h2 {
             font-size: 2.8rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
+            margin-bottom: 15px;
         }
         
-        .hero-text p {
+        .page-hero p {
             font-size: 1.2rem;
-            margin-bottom: 30px;
+            max-width: 600px;
+            margin: 0 auto 30px;
             opacity: 0.9;
-            max-width: 90%;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         
         .hero-btn {
@@ -223,16 +219,6 @@
         .hero-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 25px rgba(247, 37, 133, 0.4);
-        }
-        
-        .hero-image {
-            flex: 1;
-            position: relative;
-        }
-        
-        .animated-svg {
-            width: 100%;
-            height: 300px;
         }
         
         /* Sections Common Styles */
@@ -290,6 +276,8 @@
             border: 1px solid #f0f0f0;
             transform: translateY(50px);
             opacity: 0;
+            display: flex;
+            flex-direction: column;
         }
         
         .course-card.animate {
@@ -324,6 +312,9 @@
         
         .course-content {
             padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         
         .course-title {
@@ -359,10 +350,37 @@
             font-weight: bold;
             color: var(--primary-color);
             font-size: 1.2rem;
+            margin: 10px 0;
         }
         
         .rating {
             color: #ffc107;
+        }
+        
+        .course-action {
+            margin-top: auto;
+            padding-top: 15px;
+        }
+        
+        .course-subscribe-btn {
+            display: block;
+            width: 100%;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .course-subscribe-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
         }
         
         .view-all-btn {
@@ -370,310 +388,101 @@
             margin-top: 40px;
         }
         
-        /* Features Section */
-        .features {
+        /* Filters Section */
+        .filters {
             background-color: var(--primary-light);
+            padding: 40px 0;
         }
         
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .feature-card {
-            text-align: center;
-            padding: 40px 25px;
-            background-color: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            transform: translateY(50px);
-            opacity: 0;
-        }
-        
-        .feature-card.animate {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--primary-light);
-            color: var(--primary-color);
-            border-radius: 50%;
+        .filter-container {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 28px;
-            transition: var(--transition);
-        }
-        
-        .feature-card:hover .feature-icon {
-            background: var(--primary-color);
-            color: white;
-            transform: scale(1.1);
-        }
-        
-        .feature-card h3 {
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-        
-        .feature-card p {
-            color: #666;
-            font-size: 0.95rem;
-        }
-        
-        /* Statistics Section */
-        .stats {
-            background: linear-gradient(135deg, #3a0ca3 0%, #4361ee 100%);
-            color: white;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            text-align: center;
-        }
-        
-        .stat-item {
-            padding: 20px;
-            transform: scale(0.8);
-            opacity: 0;
-            transition: all 0.8s ease;
-        }
-        
-        .stat-item.animate {
-            transform: scale(1);
-            opacity: 1;
-        }
-        
-        .stat-item h3 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        
-        .stat-item p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        
-        /* Testimonials Section */
-        .testimonials {
-            background-color: white;
-        }
-        
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .testimonial-card {
-            background-color: #f9f9f9;
-            padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            transform: translateX(-50px);
-            opacity: 0;
-        }
-        
-        .testimonial-card.animate {
-            transform: translateX(0);
-            opacity: 1;
-        }
-        
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .testimonial-text {
-            margin-bottom: 20px;
-            font-style: italic;
-            line-height: 1.8;
-            position: relative;
-        }
-        
-        .testimonial-text:before {
-            content: "\"";  /* استخدام تهريب علامة الاقتباس */
-            font-size: 4rem;
-            color: var(--primary-color);
-            opacity: 0.2;
-            position: absolute;
-            top: -20px;
-            right: -10px;
-            font-family: Georgia, serif;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-        
-        .author-image {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-left: 15px;
-            background-size: cover;
-            background-position: center;
-            border: 3px solid white;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .author-name {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        
-        .author-role {
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        /* Instructors Section */
-        .instructors {
-            background-color: white;
-        }
-        
-        .instructors-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .instructor-card {
-            text-align: center;
-            padding: 30px 20px;
-            background-color: #f9f9f9;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            transform: translateY(50px);
-            opacity: 0;
-        }
-        
-        .instructor-card.animate {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        
-        .instructor-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .instructor-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            background-size: cover;
-            background-position: center;
-            border: 5px solid white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .instructor-card h3 {
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-        
-        .instructor-card p {
-            color: #666;
-            margin-bottom: 15px;
-        }
-        
-        .instructor-social {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 15px;
-        }
-        
-        .instructor-social a {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: var(--primary-light);
-            color: var(--primary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-        
-        .instructor-social a:hover {
-            background: var(--primary-color);
-            color: white;
-            transform: translateY(-3px);
-        }
-        
-        /* App Section */
-        .app {
-            background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
-            color: white;
-        }
-        
-        .app-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-        }
-        
-        .app-text {
-            flex: 1;
-        }
-        
-        .app-text h2 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-        }
-        
-        .app-text p {
-            margin-bottom: 30px;
-            opacity: 0.9;
-            font-size: 1.1rem;
-        }
-        
-        .app-buttons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
             flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
         }
         
-        .app-btn {
-            display: inline-flex;
-            align-items: center;
+        .filter-group {
+            display: flex;
+            flex-direction: column;
             gap: 10px;
-            padding: 12px 25px;
+        }
+        
+        .filter-group label {
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .filter-select {
+            padding: 12px 20px;
+            border-radius: 30px;
+            border: 1px solid #ddd;
             background-color: white;
-            color: var(--primary-color);
-            border-radius: 10px;
+            min-width: 180px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+        }
+        
+        .search-box {
+            position: relative;
+            margin: 0 10px;
+        }
+        
+        .search-input {
+            padding: 12px 45px 12px 20px;
+            border-radius: 30px;
+            border: 1px solid #ddd;
+            width: 300px;
+            transition: var(--transition);
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+        }
+        
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            gap: 10px;
+        }
+        
+        .pagination-item {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            background-color: white;
+            color: var(--dark-color);
             text-decoration: none;
             font-weight: 500;
+            box-shadow: var(--box-shadow);
             transition: var(--transition);
         }
         
-        .app-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .app-image {
-            flex: 1;
-            text-align: center;
+        .pagination-item:hover, 
+        .pagination-item.active {
+            background-color: var(--primary-color);
+            color: white;
         }
         
         /* Footer */
@@ -787,26 +596,18 @@
                 max-width: 720px;
             }
             
-            .hero-content {
+            .filter-container {
                 flex-direction: column;
-                text-align: center;
+                align-items: stretch;
             }
             
-            .hero-text {
-                margin-bottom: 40px;
+            .search-box {
+                width: 100%;
+                margin: 10px 0;
             }
             
-            .hero-text p {
-                max-width: 100%;
-            }
-            
-            .app-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .app-text {
-                margin-bottom: 40px;
+            .search-input {
+                width: 100%;
             }
             
             nav ul {
@@ -844,6 +645,16 @@
                 gap: 10px;
                 margin-top: 20px;
             }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-btn {
+                width: 100%;
+                justify-content: center;
+            }
         }
         
         @media (max-width: 768px) {
@@ -855,7 +666,7 @@
                 flex-direction: row;
             }
             
-            .hero-text h2 {
+            .page-hero h2 {
                 font-size: 2.2rem;
             }
             
@@ -863,20 +674,16 @@
                 font-size: 1.8rem;
             }
             
-            .courses-grid,
-            .features-grid,
-            .testimonials-grid,
-            .instructors-grid,
-            .footer-grid {
+            .courses-grid {
                 grid-template-columns: 1fr;
             }
             
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .filter-group {
+                width: 100%;
             }
             
-            .app-buttons {
-                justify-content: center;
+            .filter-select {
+                width: 100%;
             }
         }
         
@@ -886,65 +693,20 @@
                 padding: 0 10px;
             }
             
-            .hero {
-                padding: 130px 0 80px;
+            .page-hero {
+                padding: 130px 0 60px;
             }
             
             section {
                 padding: 60px 0;
             }
             
-            .hero-text h2 {
+            .page-hero h2 {
                 font-size: 1.8rem;
             }
             
-            .hero-text p {
+            .page-hero p {
                 font-size: 1rem;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .stat-item h3 {
-                font-size: 2.2rem;
-            }
-            
-            .app-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .app-btn {
-                width: 100%;
-                justify-content: center;
-            }
-            
-        }
-        
-        /* SVG Animations */
-        .svg-circle {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        .svg-square {
-            animation: float 8s ease-in-out infinite;
-        }
-        
-        .svg-triangle {
-            animation: float 7s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-            100% {
-                transform: translateY(0px);
             }
         }
         
@@ -996,20 +758,6 @@
         .hover-scale:hover {
             transform: scale(1.05);
         }
-        
-        /* تأثيرات خاصة للأقسام المطلوبة */
-        .courses, .features, .testimonials, .instructors {
-            overflow: hidden;
-        }
-        
-        .section-title h2 {
-            transition: all 0.5s ease;
-        }
-        
-        .section-title h2:hover {
-            color: var(--accent-color);
-            transform: scale(1.05);
-        }
     </style>
 </head>
 <body>
@@ -1029,7 +777,7 @@
                 </div>
                 <ul id="navMenu">
                     <li><a href="index.html"><i class="ri-home-4-line"></i> الرئيسية</a></li>
-                    <li><a href="courses.html"><i class="ri-book-open-line"></i> الكورسات</a></li>
+                    <li><a href="courses.html" class="active"><i class="ri-book-open-line"></i> الكورسات</a></li>
                     <li><a href="#"><i class="ri-information-line"></i> من نحن</a></li>
                     <li><a href="#"><i class="ri-contacts-line"></i> اتصل بنا</a></li>
                     <div class="mobile-auth">
@@ -1046,32 +794,64 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <h2>تعلم البرمجة بالعربي من أفضل الأساتذة</h2>
-                <p>كورسات عملية + فيديوهات مسجلة + اختبارات وشهادات معتمدة لتبدأ رحلتك في عالم البرمجة</p>
+    <!-- Page Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <h2>اكتشف كورساتنا</h2>
+            <p>اختر من بين مئات الكورسات التعليمية في مختلف مجالات البرمجة والتكنولوجيا</p>
+            <div class="hero-buttons">
                 <a href="#" class="hero-btn"><i class="ri-rocket-line"></i> ابدأ التعلم الآن</a>
-            </div>
-            
-            <div class="hero-image">
-                <svg class="animated-svg" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
-                    <circle class="svg-circle" cx="100" cy="100" r="40" fill="#f72585" opacity="0.8"></circle>
-                    <rect class="svg-square" x="300" y="50" width="80" height="80" fill="#4cc9f0" opacity="0.8"></rect>
-                    <polygon class="svg-triangle" points="200,250 150,150 250,150" fill="#7209b7" opacity="0.8"></polygon>
-                    <circle cx="400" cy="200" r="30" fill="#4361ee" opacity="0.6"></circle>
-                    <rect x="50" y="200" width="60" height="60" fill="#3a0ca3" opacity="0.6"></rect>
-                </svg>
             </div>
         </div>
     </section>
 
-    <!-- Featured Courses Section -->
+    <!-- Filters Section -->
+    <section class="filters">
+        <div class="container">
+            <div class="filter-container">
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="ابحث عن كورس...">
+                    <i class="ri-search-line search-icon"></i>
+                </div>
+                
+                <div class="filter-group">
+                    <label>التصنيف</label>
+                    <select class="filter-select">
+                        <option value="">جميع التصنيفات</option>
+                        <option value="web">تطوير الويب</option>
+                        <option value="mobile">تطبيقات الموبايل</option>
+                        <option value="data">علم البيانات</option>
+                        <option value="design">التصميم</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>المستوى</label>
+                    <select class="filter-select">
+                        <option value="">جميع المستويات</option>
+                        <option value="beginner">مبتدئ</option>
+                        <option value="intermediate">متوسط</option>
+                        <option value="advanced">متقدم</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>السعر</label>
+                    <select class="filter-select">
+                        <option value="">جميع الأسعار</option>
+                        <option value="free">مجاني</option>
+                        <option value="paid">مدفوع</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
     <section class="courses">
         <div class="container">
             <div class="section-title animate-on-scroll">
-                <h2>الكورسات المميزة</h2>
+                <h2>جميع الكورسات</h2>
                 <p>اكتشف أحدث الكورسات التي أضيفت إلى منصتنا</p>
             </div>
             
@@ -1086,9 +866,12 @@
                         <p class="course-instructor"><i class="ri-user-line"></i> أحمد محمد</p>
                         <div class="course-meta">
                             <span><i class="ri-star-fill"></i> 4.8 (120)</span>
-                            <span><i class="ri-group-line"></i> 350 طالب</span>
+                            <span><i class="ri-time-line"></i> 45 ساعة</span>
                         </div>
                         <div class="course-price">199 ر.س</div>
+                        <div class="course-action">
+                            <button class="course-subscribe-btn"><i class="ri-shopping-cart-line"></i> اشترك الآن</button>
+                        </div>
                     </div>
                 </div>
                 
@@ -1102,9 +885,12 @@
                         <p class="course-instructor"><i class="ri-user-line"></i> سارة عبدالله</p>
                         <div class="course-meta">
                             <span><i class="ri-star-fill"></i> 4.9 (95)</span>
-                            <span><i class="ri-group-line"></i> 280 طالب</span>
+                            <span><i class="ri-time-line"></i> 52 ساعة</span>
                         </div>
                         <div class="course-price">249 ر.س</div>
+                        <div class="course-action">
+                            <button class="course-subscribe-btn"><i class="ri-shopping-cart-line"></i> اشترك الآن</button>
+                        </div>
                     </div>
                 </div>
                 
@@ -1118,9 +904,12 @@
                         <p class="course-instructor"><i class="ri-user-line"></i> محمد السعدي</p>
                         <div class="course-meta">
                             <span><i class="ri-star-fill"></i> 4.7 (135)</span>
-                            <span><i class="ri-group-line"></i> 420 طالب</span>
+                            <span><i class="ri-time-line"></i> 38 ساعة</span>
                         </div>
                         <div class="course-price">179 ر.س</div>
+                        <div class="course-action">
+                            <button class="course-subscribe-btn"><i class="ri-shopping-cart-line"></i> اشترك الآن</button>
+                        </div>
                     </div>
                 </div>
                 
@@ -1134,220 +923,99 @@
                         <p class="course-instructor"><i class="ri-user-line"></i> فاطمة العيد</p>
                         <div class="course-meta">
                             <span><i class="ri-star-fill"></i> 4.8 (110)</span>
-                            <span><i class="ri-group-line"></i> 310 طالب</span>
+                            <span><i class="ri-time-line"></i> 42 ساعة</span>
                         </div>
                         <div class="course-price">219 ر.س</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="view-all-btn">
-                <a href="#" class="join-btn hover-scale"><i class="ri-eye-line"></i> عرض كل الكورسات</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <div class="section-title animate-on-scroll">
-                <h2>لماذا منصتنا؟</h2>
-                <p>مميزات تجعلنا الخيار الأفضل لتعلم البرمجة</p>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-card hover-lift">
-                    <div class="feature-icon">
-                        <i class="ri-crosshair-fill"></i>
-                    </div>
-                    <h3>تعلم بخطوات بسيطة</h3>
-                    <p>منهجية تعليمية ممتعة وسهلة تمكنك من إتقان المهارات خطوة بخطوة</p>
-                </div>
-                
-                <div class="feature-card hover-lift">
-                    <div class="feature-icon">
-                        <i class="ri-user-star-line"></i>
-                    </div>
-                    <h3>أساتذة متخصصين</h3>
-                    <p>تعلم من أفضل المحترفين في المجال بأسلوب شيق وسهل الفهم</p>
-                </div>
-                
-                <div class="feature-card hover-lift">
-                    <div class="feature-icon">
-                        <i class="ri-smartphone-line"></i>
-                    </div>
-                    <h3>يدعم جميع الأجهزة</h3>
-                    <p>تعلم في أي وقت ومن أي مكان عبر هاتفك أو حاسوبك أو جهازك اللوحي</p>
-                </div>
-                
-                <div class="feature-card hover-lift">
-                    <div class="feature-icon">
-                        <i class="ri-award-line"></i>
-                    </div>
-                    <h3>شهادة معتمدة</h3>
-                    <p>احصل على شهادة معتمدة بعد إتمام كل كورس لإثبات إتقانك للمهارات</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Statistics Section -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3>+15,000</h3>
-                    <p><i class="ri-user-line"></i> طالب مسجل</p>
-                </div>
-                
-                <div class="stat-item">
-                    <h3>+320</h3>
-                    <p><i class="ri-book-open-line"></i> كورس متاح</p>
-                </div>
-                
-                <div class="stat-item">
-                    <h3>+5,400</h3>
-                    <p><i class="ri-time-line"></i> ساعة تعليمية</p>
-                </div>
-                
-                <div class="stat-item">
-                    <h3>+9,200</h3>
-                    <p><i class="ri-medal-line"></i> شهادة مصدرة</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-title animate-on-scroll">
-                <h2>آراء طلابنا</h2>
-                <p>ماذا يقول طلابنا عن تجربتهم مع منصتنا</p>
-            </div>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial-card hover-lift">
-                    <p class="testimonial-text">"الكورس كان منظم جدًا وساعدني أتعلم بسرعة، المحتوى غني والتمارين عملية، أنصح به بشدة للمبتدئين."</p>
-                    <div class="testimonial-author">
-                        <div class="author-image" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80');"></div>
-                        <div>
-                            <p class="author-name">خالد الفهد</p>
-                            <p class="author-role">طالب في كورس Python</p>
+                        <div class="course-action">
+                            <button class="course-subscribe-btn"><i class="ri-shopping-cart-line"></i> اشترك الآن</button>
                         </div>
                     </div>
                 </div>
                 
-                <div class="testimonial-card hover-lift">
-                    <p class="testimonial-text">"الأستاذة سارة تشرح بطريقة رائعة، جعلت المفاهيم المعقدة تبدو سهلة، وزودتنا بنصائح عملية من تجربتها."</p>
-                    <div class="testimonial-author">
-                        <div class="author-image" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80');"></div>
-                        <div>
-                            <p class="author-name">نورة عبدالعزيز</p>
-                            <p class="author-role">طالبة في كورس Android</p>
+                <!-- Course 5 -->
+                <div class="course-card hover-lift">
+                    <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');">
+                        <div class="course-badge">برمجة</div>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">أساسيات البرمجة بلغة C++</h3>
+                        <p class="course-instructor"><i class="ri-user-line"></i> علي حسين</p>
+                        <div class="course-meta">
+                            <span><i class="ri-star-fill"></i> 4.6 (88)</span>
+                            <span><i class="ri-time-line"></i> 35 ساعة</span>
+                        </div>
+                        <div class="course-price">159 ر.س</div>
+                        <div class="course-action">
+                            <button class="course-subscribe-btn"><i class="ri-shopping-cart-line"></i> اشترك الآن</button>
                         </div>
                     </div>
                 </div>
                 
-                <div class="testimonial-card hover-lift">
-                    <p class="testimonial-text">"الشهادة ساعدتني في الحصول على وظيفة، والمشاريع العملية في الكورس كانت نقطة قوة في مقابلة العمل."</p>
-                    <div class="testimonial-author">
-                        <div class="author-image" style="background-image: url('https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=699&q=80');"></div>
-                        <div>
-                            <p class="author-name">فهد الرشيد</p>
-                            <p class="author-role">طالب في كورس تطوير الويب</p>
+                <!-- Course 6 -->
+                <div class="course-card hover-lift">
+                    <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');">
+                        <div class="course-badge">شهادة</div>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">تعلم إدارة قواعد البيانات SQL</h3>
+                        <p class="course-instructor"><i class="ri-user-line"></i> يوسف أحمد</p>
+                        <div class="course-meta">
+                            <span><i class="ri-star-fill"></i> 4.9 (102)</span>
+                            <span><i class="ri-time-line"></i> 28 ساعة</span>
+                        </div>
+                        <div class="course-price">189 ر.س</div>
+                        <div class="course-action">
+                            <button class="course-subscribe-btn"><i class="ri-shopping-cart-line"></i> اشترك الآن</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 7 -->
+                <div class="course-card hover-lift">
+                    <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1546054454-aa26e2b734c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80');">
+                        <div class="course-badge">مجاني</div>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">أساسيات HTML و CSS للمبتدئين</h3>
+                        <p class="course-instructor"><i class="ri-user-line"></i> لينا عبدالرحمن</p>
+                        <div class="course-meta">
+                            <span><i class="ri-star-fill"></i> 4.5 (156)</span>
+                            <span><i class="ri-time-line"></i> 20 ساعة</span>
+                        </div>
+                        <div class="course-price">مجاني</div>
+                        <div class="course-action">
+                            <button class="course-subscribe-btn"><i class="ri-shopping-cart-line"></i> اشترك الآن</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 8 -->
+                <div class="course-card hover-lift">
+                    <div class="course-image" style="background-image: url('https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');">
+                        <div class="course-badge">متقدم</div>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">تعلم Machine Learning مع Python</h3>
+                        <p class="course-instructor"><i class="ri-user-line"></i> ناصر الفهد</p>
+                        <div class="course-meta">
+                            <span><i class="ri-star-fill"></i> 4.9 (76)</span>
+                            <span><i class="ri-time-line"></i> 60 ساعة</span>
+                        </div>
+                        <div class="course-price">299 ر.س</div>
+                        <div class="course-action">
+                            <button class="course-subscribe-btn"><i class="ri-shopping-cart-line"></i> اشترك الآن</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Instructors Section -->
-    <section class="instructors">
-        <div class="container">
-            <div class="section-title animate-on-scroll">
-                <h2>مدرسونا المتميزون</h2>
-                <p>تعرف على فريق المدربين المحترفين لدينا</p>
-            </div>
             
-            <div class="instructors-grid">
-                <div class="instructor-card hover-lift">
-                    <div class="instructor-image" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80');"></div>
-                    <h3>أحمد محمد</h3>
-                    <p>مطور ومصمم واجهات مستخدم</p>
-                    <div class="instructor-social">
-                        <a href="#"><i class="ri-twitter-fill"></i></a>
-                        <a href="#"><i class="ri-linkedin-fill"></i></a>
-                        <a href="#"><i class="ri-github-fill"></i></a>
-                    </div>
-                </div>
-                
-                <div class="instructor-card hover-lift">
-                    <div class="instructor-image" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80');"></div>
-                    <h3>سارة عبدالله</h3>
-                    <p>مطورة تطبيقات Android</p>
-                    <div class="instructor-social">
-                        <a href="#"><i class="ri-twitter-fill"></i></a>
-                        <a href="#"><i class="ri-linkedin-fill"></i></a>
-                        <a href="#"><i class="ri-github-fill"></i></a>
-                    </div>
-                </div>
-                
-                <div class="instructor-card hover-lift">
-                    <div class="instructor-image" style="background-image: url('https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80');"></div>
-                    <h3>محمد السعدي</h3>
-                    <p>خبير في Python وتحليل البيانات</p>
-                    <div class="instructor-social">
-                        <a href="#"><i class="ri-twitter-fill"></i></a>
-                        <a href="#"><i class="ri-linkedin-fill"></i></a>
-                        <a href="#"><i class="ri-github-fill"></i></a>
-                    </div>
-                </div>
-                
-                <div class="instructor-card hover-lift">
-                    <div class="instructor-image" style="background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80');"></div>
-                    <h3>فاطمة العيد</h3>
-                    <p>مصممة واجهات وتجربة مستخدم</p>
-                    <div class="instructor-social">
-                        <a href="#"><i class="ri-twitter-fill"></i></a>
-                        <a href="#"><i class="ri-linkedin-fill"></i></a>
-                        <a href="#"><i class="ri-github-fill"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="view-all-btn">
-                <a href="#" class="join-btn hover-scale"><i class="ri-user-add-line"></i> انضم كمدرس</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- App Section -->
-    <section class="app">
-        <div class="container app-content">
-            <div class="app-text">
-                <h2>حمّل تطبيقنا الآن</h2>
-                <p>استمتع بتجربة تعلم أفضل من خلال تطبيقنا المتوافق مع جميع أجهزة الموبايل، حمّله الآن مجاناً</p>
-                <div class="app-buttons">
-                    <a href="#" class="app-btn">
-                        <i class="ri-google-play-fill"></i>
-                        <div>
-                            <span>احصل عليه من</span>
-                            <strong>Google Play</strong>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="app-image">
-                <svg class="animated-svg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="120" y="50" width="160" height="240" rx="15" fill="white" opacity="0.9"></rect>
-                    <rect x="130" y="70" width="140" height="30" rx="5" fill="#4361ee" opacity="0.7"></rect>
-                    <circle cx="150" cy="180" r="30" fill="#f72585" opacity="0.6"></circle>
-                    <rect x="190" y="160" width="70" height="15" rx="3" fill="#3a0ca3" opacity="0.6"></rect>
-                    <rect x="190" y="185" width="50" height="10" rx="3" fill="#3a0ca3" opacity="0.4"></rect>
-                </svg>
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="#" class="pagination-item active">1</a>
+                <a href="#" class="pagination-item">2</a>
+                <a href="#" class="pagination-item">3</a>
+                <a href="#" class="pagination-item">4</a>
+                <a href="#" class="pagination-item"><i class="ri-arrow-left-line"></i></a>
             </div>
         </div>
     </section>
@@ -1373,8 +1041,8 @@
                 <div class="footer-links">
                     <h4>روابط سريعة</h4>
                     <ul>
-                        <li><a href="#"><i class="ri-arrow-left-line"></i> الرئيسية</a></li>
-                        <li><a href="#"><i class="ri-arrow-left-line"></i> الكورسات</a></li>
+                        <li><a href="index.html"><i class="ri-arrow-left-line"></i> الرئيسية</a></li>
+                        <li><a href="courses.html"><i class="ri-arrow-left-line"></i> الكورسات</a></li>
                         <li><a href="#"><i class="ri-arrow-left-line"></i> من نحن</a></li>
                         <li><a href="#"><i class="ri-arrow-left-line"></i> اتصل بنا</a></li>
                     </ul>
@@ -1409,7 +1077,7 @@
     <script>
         // Simple animation for elements when scrolling
         document.addEventListener('DOMContentLoaded', function() {
-            const animatedElements = document.querySelectorAll('.course-card, .feature-card, .instructor-card, .testimonial-card, .stat-item, .animate-on-scroll');
+            const animatedElements = document.querySelectorAll('.course-card, .animate-on-scroll');
             
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -1439,17 +1107,43 @@
                 }
             });
             
-            // إضافة تأثيرات الماوس على الأقسام المطلوبة
-            const hoverSections = document.querySelectorAll('.courses, .features, .testimonials, .instructors');
+            // Search functionality
+            const searchInput = document.querySelector('.search-input');
+            const courseCards = document.querySelectorAll('.course-card');
             
-            hoverSections.forEach(section => {
-                section.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-5px)';
-                    this.style.transition = 'transform 0.5s ease';
-                });
+            searchInput.addEventListener('keyup', function() {
+                const searchTerm = this.value.toLowerCase();
                 
-                section.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
+                courseCards.forEach(card => {
+                    const title = card.querySelector('.course-title').textContent.toLowerCase();
+                    const instructor = card.querySelector('.course-instructor').textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || instructor.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Filter functionality
+            const filterSelects = document.querySelectorAll('.filter-select');
+            
+            filterSelects.forEach(select => {
+                select.addEventListener('change', function() {
+                    // هنا يمكن إضافة منطق التصفية حسب الحاجة
+                    console.log(`Filter changed: ${this.previousElementSibling.textContent} = ${this.value}`);
+                });
+            });
+            
+            // Subscribe button functionality
+            const subscribeButtons = document.querySelectorAll('.course-subscribe-btn');
+            
+            subscribeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const courseTitle = this.closest('.course-card').querySelector('.course-title').textContent;
+                    alert(`شكراً لاهتمامك بالاشتراك في كورس: ${courseTitle}\nسيتم توجيهك إلى صفحة الدفع الآن.`);
+                    // هنا يمكن إضافة التوجيه إلى صفحة الدفع
                 });
             });
         });
