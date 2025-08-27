@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الشروط والأحكام - منصة التعلم العربية</title>
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --primary-light: #eef2ff;
+            --secondary-color: #3a0ca3;
+            --accent-color: #f72585;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #4cc9f0;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            background: var(--primary-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .logo-img {
+            height: 35px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .auth-buttons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .login-btn {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .login-btn:hover {
+            color: var(--secondary-color);
+        }
+        
+        .signup-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .join-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 16px;    
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            display: inline-flex; 
+            align-items: center;
+            gap: 5px;
+            width: auto;          
+            font-size: 14px;      
+        }
+        
+        .signup-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-color);
+        }
+        
+        /* Hero Section */
+        .page-hero {
+            padding: 150px 0 80px;
+            background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .page-hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .page-hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        /* Sections Common Styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Terms Content */
+        .terms-content {
+            background-color: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 40px;
+        }
+        
+        .terms-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .terms-section {
+            margin-bottom: 30px;
+        }
+        
+        .terms-section h4 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .terms-section p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .terms-list {
+            list-style-type: none;
+            margin: 15px 0;
+            padding-right: 20px;
+        }
+        
+        .terms-list li {
+            margin-bottom: 12px;
+            padding-right: 25px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .terms-list li:before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-about p {
+            color: #ccc;
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-links h4 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h4:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .footer-links ul li a:hover {
+            color: white;
+            transform: translateX(-5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #444;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 960px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .container {
+                max-width: 720px;
+            }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background-color: white;
+                width: 100%;
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .auth-buttons {
+                display: none;
+            }
+            
+            .mobile-auth {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 20px;
+            }
+            
+            .terms-content {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                max-width: 540px;
+            }
+            
+            .header-container {
+                flex-direction: row;
+            }
+            
+            .page-hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+            
+            .page-hero {
+                padding: 130px 0 60px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .page-hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .page-hero p {
+                font-size: 1rem;
+            }
+            
+            .terms-content {
+                padding: 20px 15px;
+            }
+            
+            .terms-section h4 {
+                font-size: 1.2rem;
+            }
+        }
+        
+        /* Mobile Auth Buttons */
+        .mobile-auth {
+            display: none;
+        }
+        
+        /* إظهار أزرار تسجيل الدخول في الهاتف */
+        @media (max-width: 992px) {
+            .mobile-auth {
+                display: flex;
+            }
+            
+            .mobile-auth .login-btn,
+            .mobile-auth .signup-btn {
+                padding: 10px 15px;
+                text-align: center;
+                justify-content: center;
+            }
+        }
+        
+        /* تأثيرات التمرير الإضافية */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="ri-graduation-cap-fill"></i>
+                </div>
+                <img src="img/logo.png" alt="منصة التعلم" class="logo-img">
+            </div>
+            
+            <nav>
+                <div class="menu-toggle" id="menuToggle">
+                    <i class="ri-menu-line"></i>
+                </div>
+                <ul id="navMenu">
+                    <li><a href="index.html"><i class="ri-home-4-line"></i> الرئيسية</a></li>
+                    <li><a href="courses.html"><i class="ri-book-open-line"></i> الكورسات</a></li>
+                    <li><a href="about.html"><i class="ri-information-line"></i> من نحن</a></li>
+                    <li><a href="contact.html"><i class="ri-contacts-line"></i> اتصل بنا</a></li>
+                    <div class="mobile-auth">
+                        <a href="login.html" class="login-btn"><i class="ri-login-box-line"></i> تسجيل الدخول</a>
+                        <a href="signup.html" class="signup-btn"><i class="ri-user-add-line"></i> اشترك الآن</a>
+                    </div>
+                </ul>
+            </nav>
+            
+            <div class="auth-buttons">
+                <a href="login.html" class="login-btn"><i class="ri-login-box-line"></i> تسجيل الدخول</a>
+                <a href="signup.html" class="signup-btn"><i class="ri-user-add-line"></i> اشترك الآن</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <h2>الشروط والأحكام</h2>
+            <p>يرجى قراءة هذه الشروط بعناية قبل استخدام منصة التعلم</p>
+        </div>
+    </section>
+
+    <!-- Terms Section -->
+    <section class="terms">
+        <div class="container">
+            <div class="section-title">
+                <h2>شروط استخدام منصة التعلم</h2>
+                <p>الشروط والأحكام التي تحكم استخدامك لمنصتنا التعليمية</p>
+            </div>
+            
+            <div class="terms-content">
+                <h3>شروط استخدام منصة التعلم</h3>
+                
+                <div class="terms-section">
+                    <h4><i class="ri-information-line"></i> 1. مقدمة</h4>
+                    <p>مرحبًا بك في موقعنا! باستخدامك هذا الموقع، فإنك توافق على الشروط والأحكام التالية:</p>
+                    <ul class="terms-list">
+                        <li>الموقع مخصص للطلاب الجامعيين فقط ويهدف لتوفير محتوى تعليمي وتدريبي.</li>
+                        <li>استخدام الموقع يعني قبولك التام لهذه الشروط والأحكام.</li>
+                    </ul>
+                </div>
+                
+                <div class="terms-section">
+                    <h4><i class="ri-file-copy-line"></i> 2. استخدام المحتوى</h4>
+                    <p>نحن نضع سياسات واضحة لاستخدام المحتوى المتاح على منصتنا:</p>
+                    <ul class="terms-list">
+                        <li>المحتوى على الموقع لأغراض التعليم الشخصي فقط.</li>
+                        <li>يُمنع نسخ المحتوى أو إعادة نشره أو استخدامه لأغراض تجارية بدون إذن كتابي من الموقع.</li>
+                        <li>يُحظر استخدام المحتوى للتحايل أو الغش في الاختبارات.</li>
+                    </ul>
+                </div>
+                
+                <div class="terms-section">
+                    <h4><i class="ri-copyright-line"></i> 3. الملكية الفكرية</h4>
+                    <p>نحن نحمي حقوق الملكية الفكرية للمحتوى المقدم على المنصة:</p>
+                    <ul class="terms-list">
+                        <li>جميع الحقوق محفوظة للموقع ومقدمي الكورسات.</li>
+                        <li>أي انتهاك للملكية الفكرية يعرض الشخص للمسؤولية القانونية.</li>
+                    </ul>
+                </div>
+                
+                <div class="terms-section">
+                    <h4><i class="ri-shield-check-line"></i> 4. القيود والمسؤولية</h4>
+                    <p>هناك بعض القيود والمسؤوليات التي يجب أن تكون على علم بها:</p>
+                    <ul class="terms-list">
+                        <li>الموقع غير مسؤول عن أي ضرر أو خسارة تنتج عن استخدام الكورسات أو الاعتماد عليها بشكل كامل.</li>
+                        <li>المحتوى قد يتغير أو يتم تحديثه بشكل دوري، ولا يوجد ضمان دائم لدقته أو اكتماله.</li>
+                    </ul>
+                </div>
+                
+                <div class="terms-section">
+                    <h4><i class="ri-edit-line"></i> 5. التعديلات على الشروط</h4>
+                    <p>نحتفظ بالحق في تعديل هذه الشروط عند الحاجة:</p>
+                    <ul class="terms-list">
+                        <li>الموقع له الحق في تعديل هذه الشروط في أي وقت.</li>
+                        <li>استمرار استخدامك للموقع بعد أي تعديل يعني قبولك بالشروط الجديدة.</li>
+                    </ul>
+                </div>
+                
+                <div class="terms-section">
+                    <h4><i class="ri-scale-line"></i> 6. القوانين والاختصاص القضائي</h4>
+                    <p>يخفض استخدام المنصة للقوانين المصرية:</p>
+                    <ul class="terms-list">
+                        <li>أي نزاع ينشأ عن استخدام الموقع يخضع لقوانين جمهورية مصر العربية.</li>
+                        <li>أي نزاع سيتم حله أمام المحاكم المختصة في مصر.</li>
+                    </ul>
+                </div>
+                
+                <div class="terms-section">
+                    <h4><i class="ri-customer-service-line"></i> 7. التواصل معنا</h4>
+                    <p>إذا كان لديك أي استفسار حول هذه الشروط والأحكام، يرجى التواصل معنا عبر:</p>
+                    <ul class="terms-list">
+                        <li>البريد الإلكتروني: info@example.com</li>
+                        <li>الهاتف: +201050481955</li>
+                        <li>أو من خلال <a href="contact.html">صفحة اتصل بنا</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">
+                        <i class="ri-graduation-cap-fill"></i>
+                        <span>منصة التعلم</span>
+                    </a>
+                    <p>منصة تعليمية عربية تهدف إلى تقديم محتوى تعليمي مميز في مجال البرمجة وتكنولوجيا المعلومات.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="ri-facebook-fill"></i></a>
+                        <a href="#"><i class="ri-twitter-fill"></i></a>
+                        <a href="#"><i class="ri-instagram-line"></i></a>
+                        <a href="#"><i class="ri-youtube-fill"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="index.html"><i class="ri-arrow-left-line"></i> الرئيسية</a></li>
+                        <li><a href="courses.html"><i class="ri-arrow-left-line"></i> الكورسات</a></li>
+                        <li><a href="about.html"><i class="ri-arrow-left-line"></i> من نحن</a></li>
+                        <li><a href="contact.html"><i class="ri-arrow-left-line"></i> اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>الدعم</h4>
+                    <ul>
+                        <li><a href="#"><i class="ri-arrow-left-line"></i> مساعدة</a></li>
+                        <li><a href="#"><i class="ri-arrow-left-line"></i> الأسئلة الشائعة</a></li>
+                        <li><a href="terms.html"><i class="ri-arrow-left-line"></i> الشروط والأحكام</a></li>
+                        <li><a href="privacy.html"><i class="ri-arrow-left-line"></i> سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>اتصل بنا</h4>
+                    <ul>
+                        <li><a href="#"><i class="ri-mail-line"></i> info@example.com</a></li>
+                        <li><a href="#"><i class="ri-phone-line"></i> +201050481955</a></li>
+                        <li><a href="#"><i class="ri-map-pin-line"></i> كفر الشيخ، جمهورية مصر العربية</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2025 منصة تعليم Plus جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="ri-arrow-up-line"></i>
+    </div>
+
+    <script>
+        // Simple animation for elements when scrolling
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.terms-content, .animate-on-scroll');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Mobile menu toggle
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('show');
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('nav') && !event.target.closest('.menu-toggle')) {
+                    navMenu.classList.remove('show');
+                }
+            });
+            
+            // Back to top button
+            const backToTopButton = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('show');
+                } else {
+                    backToTopButton.classList.remove('show');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
