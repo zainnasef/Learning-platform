@@ -82,6 +82,10 @@
             color: var(--primary-color);
             font-weight: 700;
         }
+
+        .logo-img {
+            height: 35px;
+        }
         
         nav ul {
             display: flex;
@@ -666,7 +670,7 @@
         @media (max-width: 576px) {
             .container {
                 width: 100%;
-                padding: 0 10px;
+                padding: 10px;
             }
             
             .page-hero {
@@ -726,7 +730,7 @@
                 <div class="logo-icon">
                     <i class="ri-graduation-cap-fill"></i>
                 </div>
-                <h1>منصة التعلم</h1>
+                <img src="img/logo.png" alt="منصة التعلم" class="logo-img">
             </div>
             
             <nav>
@@ -739,15 +743,15 @@
                     <li><a href="about.html" class="active"><i class="ri-information-line"></i> من نحن</a></li>
                     <li><a href="contact.html"><i class="ri-contacts-line"></i> اتصل بنا</a></li>
                     <div class="mobile-auth">
-                        <a href="#" class="login-btn"><i class="ri-login-box-line"></i> تسجيل الدخول</a>
-                        <a href="#" class="signup-btn"><i class="ri-user-add-line"></i> اشترك الآن</a>
+                        <a href="login.html" class="login-btn"><i class="ri-login-box-line"></i> تسجيل الدخول</a>
+                        <a href="signup.html" class="signup-btn"><i class="ri-user-add-line"></i> اشترك الآن</a>
                     </div>
                 </ul>
             </nav>
             
             <div class="auth-buttons">
-                <a href="#" class="login-btn"><i class="ri-login-box-line"></i> تسجيل الدخول</a>
-                <a href="#" class="signup-btn"><i class="ri-user-add-line"></i> اشترك الآن</a>
+                <a href="login.html" class="login-btn"><i class="ri-login-box-line"></i> تسجيل الدخول</a>
+                <a href="signup.html" class="signup-btn"><i class="ri-user-add-line"></i> اشترك الآن</a>
             </div>
         </div>
     </header>
@@ -872,8 +876,8 @@
                     </div>
                     <div class="member-info">
                         <h3>زين هانى</h3>
-                        <p class="member-role">المؤسس والرئيس التنفيذي</p>
-                        <p class="member-desc">شاب طموح ومبدع، أسس المنصة بهدف تطوير التعليم الإلكتروني وتقديم تجربة تعلم حديثة تناسب الشباب العربي. يمتلك شغفًا بالمعرفة والتطوير، ويسعى دائمًا لخلق بيئة تعليمية تجمع بين الجودة والسهولة والتأثير الحقيقي في حياة الطلاب.</p>
+                        <p class="member-role">المؤسس والرئيس التنفيذي (CEO)</p>
+                        <p class="member-desc">صاحب فكرة المنصة والمسؤول عن قيادتها. يشرف على الرؤية والاستراتيجية العامة، ويتابع التنفيذ والتطوير التقني للمنصة لضمان تقديم تجربة تعليمية متميزة للطلاب.</p>
                         <div class="member-social">
                             <a href="#"><i class="ri-twitter-fill"></i></a>
                             <a href="#"><i class="ri-linkedin-fill"></i></a>
@@ -888,8 +892,23 @@
                     </div>
                     <div class="member-info">
                         <h3>مصطفى محمود</h3>
-                        <p class="member-role">الشريك المساعد في تأسيس المنصة</p>
-                        <p class="member-desc">مسؤول عن متابعة وتنسيق أعمال المنصة، وداعم أساسي في التخطيط والتطوير. يتميز بقدرات عالية في التنظيم وإدارة الفرق، ويشارك في وضع الاستراتيجيات التي تساعد المنصة على النمو وتحقيق أهدافها.</p>
+                        <p class="member-role">الرئيس التنفيذي للتسويق (CMO)</p>
+                        <p class="member-desc">مسؤول عن وضع وتنفيذ خطط التسويق والتواصل مع الطلاب وأعضاء هيئة التدريس. يعمل على بناء الحملات الدعائية، وتنمية العلامة التجارية للمنصة، وضمان وصولها إلى أكبر شريحة من المستفيدين.</p>
+                        <div class="member-social">
+                            <a href="#"><i class="ri-twitter-fill"></i></a>
+                            <a href="#"><i class="ri-linkedin-fill"></i></a>
+                            <a href="#"><i class="ri-dribbble-line"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="img/ahmed.jpg" alt="الشريك المساعد في تأسيس المنصة">
+                    </div>
+                    <div class="member-info">
+                        <h3>احمد هانى</h3>
+                        <p class="member-role">الرئيس التنفيذي للعمليات (COO)</p>
+                        <p class="member-desc">مسؤول عن إدارة العمليات اليومية للمنصة. يتولى الإشراف على المحتوى التعليمي والتنسيق مع المحاضرين، إضافةً إلى متابعة الشؤون المالية وتوزيع الإيرادات بما يحقق التوازن والاستدامة</p>
                         <div class="member-social">
                             <a href="#"><i class="ri-twitter-fill"></i></a>
                             <a href="#"><i class="ri-linkedin-fill"></i></a>
@@ -949,9 +968,9 @@
                 <div class="footer-about">
                     <div class="footer-logo">
                         <i class="ri-graduation-cap-fill"></i>
-                        <span>منصة التعلم</span>
+                        <span>منصة تعليم Plus</span>
                     </div>
-                    <p>منصة تعليمية عربية تهدف إلى تقديم محتوى تعليمي مميز في مجال البرمجة وتكنولوجيا المعلومات.</p>
+                    <p>منصة تعليمية عربية توفر للطلاب محتوى حديث يساعدهم على التفوق دراسيًا والاستعداد لسوق العمل.</p>
                     <div class="social-links">
                         <a href="#"><i class="ri-facebook-fill"></i></a>
                         <a href="#"><i class="ri-twitter-fill"></i></a>
@@ -991,7 +1010,7 @@
             </div>
             
             <div class="copyright">
-                <p>© 2023 منصة التعلم. جميع الحقوق محفوظة.</p>
+                <p>© 2025 منصة تعليم Plus جميع الحقوق محفوظة</p>
             </div>
         </div>
     </footer>
