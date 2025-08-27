@@ -82,6 +82,10 @@
             color: var(--primary-color);
             font-weight: 700;
         }
+
+        .logo-img {
+            height: 35px;
+        }
         
         nav ul {
             display: flex;
@@ -624,7 +628,7 @@
         @media (max-width: 576px) {
             .container {
                 width: 100%;
-                padding: 0 10px;
+                padding: 10px;
             }
             
             .page-hero {
@@ -697,7 +701,7 @@
                 <div class="logo-icon">
                     <i class="ri-graduation-cap-fill"></i>
                 </div>
-                <h1>منصة التعلم</h1>
+                <img src="img/logo.png" alt="منصة التعلم" class="logo-img">
             </div>
             
             <nav>
@@ -710,15 +714,15 @@
                     <li><a href="about.html"><i class="ri-information-line"></i> من نحن</a></li>
                     <li><a href="contact.html" class="active"><i class="ri-contacts-line"></i> اتصل بنا</a></li>
                     <div class="mobile-auth">
-                        <a href="#" class="login-btn"><i class="ri-login-box-line"></i> تسجيل الدخول</a>
-                        <a href="#" class="signup-btn"><i class="ri-user-add-line"></i> اشترك الآن</a>
+                        <a href="login.html" class="login-btn"><i class="ri-login-box-line"></i> تسجيل الدخول</a>
+                        <a href="signup.html" class="signup-btn"><i class="ri-user-add-line"></i> اشترك الآن</a>
                     </div>
                 </ul>
             </nav>
             
             <div class="auth-buttons">
-                <a href="#" class="login-btn"><i class="ri-login-box-line"></i> تسجيل الدخول</a>
-                <a href="#" class="signup-btn"><i class="ri-user-add-line"></i> اشترك الآن</a>
+                <a href="login.html" class="login-btn"><i class="ri-login-box-line"></i> تسجيل الدخول</a>
+                <a href="signup.html" class="signup-btn"><i class="ri-user-add-line"></i> اشترك الآن</a>
             </div>
         </div>
     </header>
@@ -744,7 +748,7 @@
                             </div>
                             <div class="contact-text">
                                 <h4>العنوان</h4>
-                                <p>الرياض، حي العليا<br>شارع الملك فهد، المملكة العربية السعودية</p>
+                                <p> كفر الشيخ، جمهورية مصر العربية</p>
                             </div>
                         </div>
                         
@@ -764,7 +768,7 @@
                             </div>
                             <div class="contact-text">
                                 <h4>البريد الإلكتروني</h4>
-                                <p>info@example.com<br>support@example.com</p>
+                                <p>zainnasef1@gmail.com</p>
                             </div>
                         </div>
                     </div>
@@ -822,51 +826,51 @@
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
-                        كيف يمكنني الاشتراك في الكورسات؟
+                        كيف أسجل في المنصة؟
                         <i class="ri-arrow-down-s-line faq-icon"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>يمكنك الاشتراك في أي كورس عن طريق زيارة صفحة الكورسات، اختيار الكورس الذي تريد الاشتراك فيه، ثم النقر على زر "اشترك الآن". ستتم إعادة توجيهك إلى صفحة الدفع لإكمال عملية الشراء.</p>
+                        <p>يمكنك الضغط على “اشترك الآن” وملء بياناتك، ثم اختيار الكورس المناسب لك.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">
-                        ما هي طرق الدفع المتاحة؟
+                        هل الكورسات خاصة بطلاب جامعة كفر الشيخ فقط؟
                         <i class="ri-arrow-down-s-line faq-icon"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>نحن نقبل多种支付方式包括信用卡（Visa、MasterCard）、PayPal、Apple Pay以及银行转账。所有支付都通过安全加密处理以确保您的信息安全。</p>
+                        <p>الكورسات الأكاديمية للطلاب داخل الجامعة، بينما الكورسات العملية مثل الأوتوكاد والإكسل متاحة للجميع.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">
-                        هل يمكنني الحصول على استرداد للرسوم؟
+                        كيف يتم الدفع؟
                         <i class="ri-arrow-down-s-line faq-icon"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>نعم، نحن نقدم ضمان استرداد الرسوم خلال 30 يومًا من تاريخ الشراء. إذا لم تكن راضيًا عن الكورس، يمكنك طلب استرداد كامل للرسوم عن طريق التواصل مع دعم العملاء.</p>
+                        <p>الدفع متاح عبر التحويل البنكي أو المحافظ الإلكترونية، وبعد التأكيد يتم تفعيل حسابك مباشرة.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">
-                        كيف يمكنني التواصل مع المدرب؟
+                        هل سأحصل على شهادة بعد إنهاء الكورس؟
                         <i class="ri-arrow-down-s-line faq-icon"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>بعد الاشتراك في أي كورس، سيكون لديك إمكانية الوصول إلى منتدى المناقشة الخاص بهذا الكورس حيث يمكنك طرح الأسئلة على المدرب ومشاركة الأفكار مع الزملاء. كما يمكنك إرسال رسائل خاصة للمدرب عبر المنصة.</p>
+                        <p>نعم، بعد إتمام الكورس والاختبار النهائي ستحصل على شهادة إلكترونية معتمدة.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">
-                        هل الشهادات معتمدة؟
+                        هل الكورسات مباشرة (لايف)؟
                         <i class="ri-arrow-down-s-line faq-icon"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>نعم، جميع الشهادات التي نقدمها معتمدة من قبل منصة التعلم ومعترف بها في سوق العمل. يمكنك مشاركة شهادتك على LinkedIn وإضافتها إلى سيرتك الذاتية.</p>
+                        <p>نعم، جميع الكورسات تقدم مباشرة (Live) مع المحاضر، لضمان التفاعل المباشر وطرح الأسئلة أثناء المحاضرة</p>
                     </div>
                 </div>
             </div>
@@ -882,7 +886,10 @@
             </div>
             
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.207391996772!2d46.67527657599729!3d24.774506278067017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2ee3e9bb37cb5d%3A0x89c2d1f2a378e6d6!2z2KfZhNmF2LnZh9iv2Kkg2KfZhNmF2YXZitip!5e0!3m2!1sar!2ssa!4v1678882345678!5m2!1sar!2ssa" allowfullscreen="" loading="lazy"></iframe>
+                <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55258.17411831776!2d30.918!3d31.111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f64b7d8f2caaaa%3A0x6c06d72d6f43c6ff!2z2KfZhNmF2YbYqNin2YTYjCDYp9mE2YXZitmK2Kk!5e0!3m2!1sar!2seg!4v1699999999999!5m2!1sar!2seg" 
+  width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+</iframe>
             </div>
         </div>
     </section>
@@ -894,9 +901,9 @@
                 <div class="footer-about">
                     <div class="footer-logo">
                         <i class="ri-graduation-cap-fill"></i>
-                        <span>منصة التعلم</span>
+                        <span>منصة تعليم Plus</span>
                     </div>
-                    <p>منصة تعليمية عربية تهدف إلى تقديم محتوى تعليمي مميز في مجال البرمجة وتكنولوجيا المعلومات.</p>
+                    <p>منصة تعليمية عربية توفر للطلاب محتوى حديث يساعدهم على التفوق دراسيًا والاستعداد لسوق العمل.</p>
                     <div class="social-links-footer">
                         <a href="#"><i class="ri-facebook-fill"></i></a>
                         <a href="#"><i class="ri-twitter-fill"></i></a>
@@ -936,7 +943,7 @@
             </div>
             
             <div class="copyright">
-                <p>© 2023 منصة التعلم. جميع الحقوق محفوظة.</p>
+                <p>© 2025 منصة تعليم Plus جميع الحقوق محفوظة</p>
             </div>
         </div>
     </footer>
